@@ -1,6 +1,13 @@
 package main
 
-import "github.com/gofiber/fiber/v2"
+import (
+	"math/rand"
+
+	"github.com/gofiber/fiber/v2"
+)
+
+const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+const length = 6 // Length of the short url
 
 func main() {
 	app := fiber.New()
@@ -25,6 +32,11 @@ func main() {
 }
 
 func GenerateShortURL() string {
-	surl := ""
-	return surl
+	result := make([]byte, length) // Create an empty slice with zeros
+
+	for i := range result {
+		result[i] = charset[rand.Intn(len(charset))] // Randomly pick a character from the letters string
+	}
+
+	return string(result)
 }
