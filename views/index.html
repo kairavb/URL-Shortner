@@ -70,6 +70,12 @@
             font-size: 1.4rem;
             margin: 0px;
         }
+        a {
+            color: #fff;
+        }
+        a:hover {
+            color: #e2b8f3;
+        }
     </style>
 </head>
 <body>
@@ -80,7 +86,7 @@
         <br>
         <button type="submit">Short!</button>
     </form>
-    <p>Short URL: /{{ .url}}</p>
+    <p>Short URL: <a href="/{{ .url}}">/{{ .url}}</a></p>
 
 </body>
 </html>
