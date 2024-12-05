@@ -25,6 +25,6 @@ func main() {
 }
 
 func GenerateShortURL() string {
-	surl := 6
+	surl := ""
 	return surl
 }
