@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shortner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(45deg, #d598ed, #7f11ad);
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 5rem;
+            margin-bottom: 30px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        
+        form {
+            width: 100%;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+
+        input {
+            padding: 15px;
+            width: 70%;
+            border-radius: 8px;
+            border: 2px solid #fff;
+            background: transparent;
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #d598ed;
+            outline: none;
+            box-shadow: 0 0 8px #d598ed;
+        }
+
+        button {
+            padding: 12px 30px;
+            background-color: #d598ed;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #7f11ad;
+            transform: scale(1.05);
+        }
+
+        p {
+            font-size: 1.4rem;
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>URL Shortner</h1>
+    <form action="/" method="POST">
+        <input type="url" placeholder="Enter Long URL..." required>
+        <br>
+        <button type="submit">Short!</button>
+    </form>
+    <p>Short URL: {{ .url}}</p>
+
+</body>
+</html>
